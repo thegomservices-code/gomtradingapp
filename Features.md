@@ -34,7 +34,7 @@ Then we run **RSA-2048 JWT Verification** which is an offline verification syste
 
 This trading suite has been designed for a seamless zip-file distribution to end-users without requiring complex technical setups, bridging the gap between the everyman and programming language proficient users.
 
-This has been down with **Relative Path Resolutions** which means that the backend anchors all path evaluate directly to the executable file, allowing the folder to be run from any drive or directory structure on Windows. In addition, **Automated Data Safeguards** means when recompiling or updating the build, it will automatically capture, backs up, and restores the `/data` folder, ensuring you never lose your SQLite database or active bot configuration during an update.
+This has been done with **Relative Path Resolutions** which means that the backend anchors all path evaluate directly to the executable file, allowing the folder to be run from any drive or directory structure on Windows. In addition, **Automated Data Safeguards** means when recompiling or updating the build, it will automatically capture, backs up, and restores the `/data` folder, ensuring you never lose your SQLite database or active bot configuration during an update.
 
 ### Memory Based Database
 
