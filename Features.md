@@ -10,7 +10,7 @@ The application has many features and tools which are capable of making your tra
 
 ### Multi-Bot Fleet Management
 
-The application suite is entirely uncoupled from a the standard 1:1 bot relationship. The backend has beened designed to operate as a **Fleet Manager** capable of dynamically detecting, routing, and controlling dozens of individual `tf2autobot` bot instances simultaneously. Each bot runs in its own isolated background child process with individual `.env` configurations, while the GUI serves as the unified management hub.
+The application suite is entirely uncoupled from the standard 1:1 bot relationship. The backend has beened designed to operate as a **Fleet Manager** capable of dynamically detecting, routing, and controlling dozens of individual `tf2autobot` bot instances simultaneously. Each bot runs in its own isolated background child process with individual `.env` configurations, while the GUI serves as the unified management hub.
 
 ### Custom `tf2autobot` Integration
 
