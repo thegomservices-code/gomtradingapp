@@ -2,8 +2,6 @@
 
 The GOM Trading App (GTA) is a comprehensive, scalable, and secure commercial software suite designed for automated Team Fortress 2 trading management. It features a standalone dynamic React GUI backed by an Express/Electron core, utilising robust SQLite database storage, synchronised WebSocket caching, and a modern licensing system.
 
----
-
 ## Core Functionality
 
 The application has many features and tools which are capable of making your trading experience easier, quicker, and more straightforward. This document will breakdown the aspects of the app into bit-size chunks, allow re-reading if you miss any particular spot. First up, the core architecture of the application.
@@ -46,8 +44,6 @@ The GOM Trading App operates on a strict privacy-first, locally-hosted model. Th
 
 **The only data collected** by GOM Services is voluntary bug reports or crash logs if you choose to submit them. We do not track your trading metrics, profits, or API keys.
 
----
-
 ## Fleet Overview
 
 Being the command center of the application, this page provides you with an overview of the combined profits and amount of trades made by the bots you manage, the recent pricelist changes made based on the collected WebSocket data, and gives the ability to control the active states of the bots.
@@ -66,8 +62,6 @@ Being the command center of the application, this page provides you with an over
 
 **Process Manager:** Used to start, stop, and view the live terminal command line outputs for any specific bot directly within the Electron UI.
 
----
-
 ## Bot Dashboard
 
 The bot dashboard provides metrics for a single selected bot. It links directly to the fleet manager by isolating the data feed, allowing you to monitor API health, review recent trade offers, and track daily profit charting for specific accounts without background noise.
@@ -83,8 +77,6 @@ The bot dashboard provides metrics for a single selected bot. It links directly 
 **Last Accepted Offer:** A display logging the latest accepted or declined trade offer, complete with timestamped hover-data and reason for decline/accept.
 
 ![alt text](guide-photos/features/bot-dashboard-latest-offer.png)
-
----
 
 ## Inventory Viewer
 
@@ -115,8 +107,6 @@ This tool visually recreates the selected bot's TF2 Backpack. By synchronizing w
 ![alt text](guide-photos/features/inventory-view-backpack-button.gif)
 
 **Filtering, Sorting, and Searching:** Class, qualities, tradability and craftability and name and description searching are all included in the inventory viewer. You can also toggle the filter bar as well to hide it if you find it unnecessary.
-
----
 
 ## Pricelist Manager
 
@@ -185,8 +175,6 @@ The database page interfaces with the isolated SQLite database generated for eac
 
 ![alt text](guide-photos/features/ignored-comp.png)
 ![alt text](guide-photos/features/blocked-users.png)
-
----
 
 ## Settings & Customization
 
