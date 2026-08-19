@@ -144,6 +144,8 @@ This tool visually recreates the selected bot's TF2 Backpack. By synchronizing w
 
 **Filtering, Sorting, and Searching:** Class, qualities, tradability and craftability and name and description searching are all included in the inventory viewer. You can also toggle the filter bar as well to hide it if you find it unnecessary.
 
+![alt text](guide-photos/features/filter-and-sorting-demo.gif)
+
 ## Pricelist Manager
 
 The pricelist page acts as the listing management core of your bot. It will dictate the trading behaviors of your bot by converting raw item names into their respective SKUs and feeding automated buy/sell orders directly into the bot's internal systems. Changes made here immediately influence the global websocket feed and the bot's market presence.
@@ -252,4 +254,4 @@ A core component of the GOM Trading App is its collection and usage of WebSocket
 
 In the event there is a **Ghost Listing**, meaning a Listing that hasn't been bumped, updated, or removed in a certain amount of time, the automatching system to will flag and remove it from the used listings.
 
-**Price Matching:** After adding, updating, or removing the listing data, the automatch system will check if the listed price (from the bot) is the lowest, if so, it will match to the next highest listing. This prevents individuals from pushing your price down to a large discount, then throwing their prices back up, this system catches those individuals and will prevent that from accuring.
+**Price Matching:** After adding, updating, or removing the listing data, the automatch system will check if the listed price (from the bot) is the lowest, if so, it will match to the next highest listing. This prevents individuals from pushing your price down to a large discount, then throwing their prices back up, this system catches those individuals and will prevent that from occuring.
