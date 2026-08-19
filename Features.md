@@ -60,13 +60,13 @@ The application makes use of a simple left-aligned sidebar for navigation betwee
 
 Each version of the application gets pushed once enough fixes, features, and changes have been made. The internal version trackings follows as so:
 
-A.BB.CC
+**Version: _A.BB.CC_**
 
-A = Is the year of development, this project was started in 2026, meaning when 2027 hits, it will become version 2.XX.XX
+**A** = Is the year of development, this project was started in 2026, meaning when 2027 hits, it will become version 2.XX.XX
 
-B = Is the month of development in the year, this means if the month is January of 2027, the version will be 2.1.XX
+**B** = Is the month of development in the year, this means if the month is January of 2027, the version will be 2.1.XX
 
-C = Is the day of the month the programming and compiling were completed, meaning if an update was pushed (after testing and building) on January 10th, 2027, it will be version 2.1.10
+**C** = Is the day of the month the programming and compiling were completed, meaning if an update was pushed (after testing and building) on January 10th, 2027, it will be version 2.1.10
 
 The initial build for this application started on version 1.5.16 (16th of May, 2026). Review the CHANGELOG.md for more details on the versions, and each's features, changes, and fixes.
 
