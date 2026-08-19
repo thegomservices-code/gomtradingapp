@@ -1,6 +1,6 @@
 # GOM Trading App (GTA): Features & Capabilities
 
-The GOM Trading App (GTA) is a comprehensive, scalable, and secure commercial software suite designed for automated Team Fortress 2 trading management. It features a standalone dynamic React GUI backed by an Express/Electron core, utilising robust SQLite database storage, synchronised WebSocket caching, and a modern licensing system.
+The GOM Trading App (GTA) is a comprehensive, scalable, and secure commercial software suite designed for automating Team Fortress 2 trading, managing accounts, and allowing for large-scale trading operations. It features standalone dynamic React GUI's backed by an Express/Electron core, utilising the robust SQLite database storage system. The app hosts a synchronised WebSocket caching, packaging, and sorting system, all done through a single connection, following the guidelines set for WebSocket usage. It runs on a modern licensing system to prevent tampering and exploitation.
 
 ## Core Functionality
 
@@ -9,6 +9,10 @@ The application has many features and tools which are capable of making your tra
 ### Multi-Bot Fleet Management
 
 The application suite is entirely uncoupled from the standard 1:1 bot relationship. The backend has beened designed to operate as a **Fleet Manager** capable of dynamically detecting, routing, and controlling dozens of individual `tf2autobot` bot instances simultaneously. Each bot runs in its own isolated background child process with individual `.env` configurations, while the GUI serves as the unified management hub.
+
+### Unique Bot Database and Pages
+
+Each bot added to the application has their own stored inventory caches, database used for Paid Prices, Sales, Pricelist, and WebSocket data. Each page other than Fleet Overview has a unique render from each bots data, seemlessly swapping when switching between bots on the sidebar.
 
 ### Custom `tf2autobot` Integration
 
@@ -43,6 +47,28 @@ The application makes use of RAM to store and update pricelist WebSocket events 
 The GOM Trading App operates on a strict privacy-first, locally-hosted model. The software requires a one-time license activation, with no recurring subscription fees. All trading data, databases, `.env` configurations, and cached files are stored entirely on your local PC. There is no external cloud syncing or remote access to your files.
 
 **The only data collected** by GOM Services is voluntary bug reports or crash logs if you choose to submit them. We do not track your trading metrics, profits, or API keys.
+
+## Titlebar & Sidebar
+
+The application makes use of a simple left-aligned sidebar for navigation between pages and a titlebar to provide the app's title, programmer & business responsible for creating it, as well as the version of the application. On that note, the version follows a simple format
+
+### Sidebar
+
+### Titlebar
+
+### Formatting of Versions
+
+Each version of the application gets pushed once enough fixes, features, and changes have been made. The internal version trackings follows as so:
+
+A.BB.CC
+
+A = Is the year of development, this project was started in 2026, meaning when 2027 hits, it will become version 2.XX.XX
+
+B = Is the month of development in the year, this means if the month is January of 2027, the version will be 2.1.XX
+
+C = Is the day of the month the programming and compiling were completed, meaning if an update was pushed (after testing and building) on January 10th, 2027, it will be version 2.1.10
+
+The initial build for this application started on version 1.5.16 (16th of May, 2026). Review the CHANGELOG.md for more details on the versions, and each's features, changes, and fixes.
 
 ## Fleet Overview
 
@@ -191,3 +217,29 @@ This section manages the visual and operational preferences of the application. 
 **Bot Customization:** Ability to assign specific HEX colors to specific bots, making it easier to track individual bot metrics on global dashboards. Allows toggling display name over steam account name.
 
 ![alt text](guide-photos/features/settings-botvisuals.png)
+
+## Automatch System
+
+A core component of the GOM Trading App is its collection and usage of WebSocket data to intelligently track incoming and outgoing listings.
+
+**Collection:** The WebSocket is connected to through a WebSocket Hub script running on a child node process, this acts as a single connection, following the usage rules of backpack.tf's WebSocket server. They are then sent to each connection to be sorted.
+
+**Sorting:** The events gathered through the WebSocket Hub are rapidly sorted and compared to SKU's on the active bot's pricelist, any events that match are stored and held for the next packet to the bot. Any unmatched events are discarded for the purpose of this application. There are a few selective rules that come along with the SKU matching system:
+
+- Painted unusuals are included in automatching for their unpainted counterparts, stripping their paint partial SKU to achieve this.
+
+- Painted and spelled hats in buy orders are filtered out when matching non-unusual items.
+
+- Listings from Blocked Competitors or Ignored Listing IDs are excluded.
+
+**Usage:** The bots will compare the new events to the old ones they have, with the intent (buy/sell), and event type (added, updated, removed) determining the usage.
+
+- If the event is added, then it will be saved to the items (on the pricelist) WebSocket data.
+
+- If the event is updated, it will be compared to saved WebSocket data, and replace the correct listing ID.
+
+- If the event is removed, it will be compared to the saved WebSocket data, and remove the correct listing ID.
+
+In the event there is a **Ghost Listing**, meaning a Listing that hasn't been bumped, updated, or removed in a certain amount of time, the automatching system to will flag and remove it from the used listings.
+
+**Price Matching:** After adding, updating, or removing the listing data, the automatch system will check if the listed price (from the bot) is the lowest, if so, it will match to the next highest listing. This prevents individuals from pushing your price down to a large discount, then throwing their prices back up, this system catches those individuals and will prevent that from accuring.
