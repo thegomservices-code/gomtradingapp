@@ -42,15 +42,19 @@ This has been done with **Relative Path Resolutions** which means that the backe
 
 The application makes use of RAM to store and update pricelist WebSocket events without clogging the I/O capacity of the node process. This was implemented as a part of a wide performance review as previous versions of this software suffered from "time-based bloat" where if left on for too long, would greatly reduce the responsiveness and useability of the application. This is no longer a concern due to multiple different systems being used, like the RAM-based temp-storage method. To save data between restarts, updates, or crashes, the application creates a RAM_state.json file in the /data folder to use upon reboot, injecting it back into the RAM processers.
 
+> [!note]
+> The application doesn't use a lot of RAM for the purpose of temporarily holding WebSocket data relating to the pricelist entries. The 4GB maximum should never be hit, even with thousands of listings.
+
 ### Privacy & Data Usage
 
 The GOM Trading App operates on a strict privacy-first, locally-hosted model. The software requires a one-time license activation, with no recurring subscription fees. All trading data, databases, `.env` configurations, and cached files are stored entirely on your local PC. There is no external cloud syncing or remote access to your files.
 
-**The only data collected** by GOM Services is voluntary bug reports or crash logs if you choose to submit them. We do not track your trading metrics, profits, or API keys.
+> [!WARNING]
+> _**The only data collected by GOM Services is voluntary bug reports or crash logs** if you choose to submit them. We do not track your trading metrics, profits, API keys, .env variables or any other locally hosted information._
 
 ## Titlebar & Sidebar
 
-The application makes use of a simple left-aligned sidebar for navigation between pages and a titlebar to provide the app's title, programmer & business responsible for creating it, as well as the version of the application. On that note, the version follows a simple format
+The application makes use of a simple left-aligned sidebar for navigation between pages and a titlebar to provide the app's title, programmer & business responsible for creating it, as well as the version of the application.
 
 ### Sidebar
 
