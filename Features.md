@@ -54,7 +54,17 @@ The application makes use of a simple left-aligned sidebar for navigation betwee
 
 ### Sidebar
 
+The sidebar consists of the **Fleet Overview**, **Dashboard**, **Inventory**, **Pricelist**, **Database**, and **Options** navigation buttons. Each button moves you to the corresponding page, with pages other than Fleet Overview being unique to each bot.
+
+**Active Bots** is the section of the sidebar under the Fleet Overview. It allows you to select the bot you want to view the pages for. Currently TheRobotPingu is selected, so I will see the pages for that account, but I can selected TheStoragePingu instead to view its pages.
+
+![alt text](guide-photos/features/sidebar-demo.gif)
+
 ### Titlebar
+
+The titlebar is much simplier, in that it just displays the application name on the left, the creator and version of the app in the center, and the operating systems minimise, maximise, and exit buttons on the right.
+
+![alt text](guide-photos/features/titlebar.png)
 
 ### Formatting of Versions
 
@@ -62,11 +72,11 @@ Each version of the application gets pushed once enough fixes, features, and cha
 
 **Version: _A.BB.CC_**
 
-**A** = Is the year of development, this project was started in 2026, meaning when 2027 hits, it will become version 2.XX.XX
+- **A** = Is the year of development, this project was started in 2026, meaning when 2027 hits, it will become version 2.XX.XX
 
-**B** = Is the month of development in the year, this means if the month is January of 2027, the version will be 2.1.XX
+- **B** = Is the month of development in the year, this means if the month is January of 2027, the version will be 2.1.XX
 
-**C** = Is the day of the month the programming and compiling were completed, meaning if an update was pushed (after testing and building) on January 10th, 2027, it will be version 2.1.10
+- **C** = Is the day of the month the programming and compiling were completed, meaning if an update was pushed (after testing and building) on January 10th, 2027, it will be version 2.1.10
 
 The initial build for this application started on version 1.5.16 (16th of May, 2026). Review the CHANGELOG.md for more details on the versions, and each's features, changes, and fixes.
 
